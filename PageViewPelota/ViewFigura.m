@@ -43,6 +43,7 @@
 -(void)initFiguraWithOrigenX:(int)valX y:(int)valY
 {
     valYF = valY;
+    paso = valX;
     self.frame = CGRectMake(valX,valYF,100,100);
     self.alpha = 0.5;
     self.layer.cornerRadius = radio;
@@ -51,13 +52,14 @@
 }
 -(void)movimientoFigura
 {
-    int red = arc4random() % 255;
-    int gre = arc4random() % 255;
-    int blu = arc4random() % 255;
     
-    float redF = (float)red/255;
-    float greF = (float)gre/255;
-    float bluF = (float)blu/255;
+    int red = arc4random() % 256;
+    int gre = arc4random() % 256;
+    int blu = arc4random() % 256;
+    
+    float redF = (float)red/256;
+    float greF = (float)gre/256;
+    float bluF = (float)blu/256;
 
     if(paso + (radio * 2) < limitX && !fin)
     {
@@ -76,7 +78,8 @@
     
     [UIView animateWithDuration:0.5 animations:^{
         self.backgroundColor = [UIColor colorWithRed:redF green:greF blue:bluF alpha:1.0];
-        self.frame = CGRectMake(paso, valYF*redF, 100, 100);
+        self.frame = CGRectMake(paso, valYF, 100, 100);
+//        self.layer.cornerRadius = radio;
     }];
 }
 /*
