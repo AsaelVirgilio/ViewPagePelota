@@ -15,6 +15,7 @@
     int radio;
     int valYF;
     BOOL fin;
+    int constPaso;
     
 }
 
@@ -32,6 +33,7 @@
         fin = NO;
         limitX = frame.size.width;
         radio = 50;
+        constPaso = 20;
         
         [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(movimientoFigura) userInfo:nil repeats:YES];
     
@@ -63,7 +65,7 @@
 
     if(paso + (radio * 2) < limitX && !fin)
     {
-        paso += 10;
+        paso += constPaso;
     
     }else
     {
@@ -72,7 +74,7 @@
         if(paso <= 0)
             fin = NO;
         
-        paso -= 10;
+        paso -= constPaso;
     }
     
     
