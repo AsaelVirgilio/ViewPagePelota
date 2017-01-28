@@ -63,7 +63,7 @@
 
     if(paso + (radio * 2) < limitX && !fin)
     {
-        paso += 10;
+        paso += 20;
     
     }else
     {
@@ -72,7 +72,7 @@
         if(paso <= 0)
             fin = NO;
         
-        paso -= 10;
+        paso -= 20;
     }
     
     
